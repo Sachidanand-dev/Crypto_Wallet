@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Home, X, Wallet, Menu, Copy } from "lucide-react"; // Icons
 import { logo } from "../../assets/icons"; // Logo
@@ -15,17 +15,14 @@ const Navbar = () => {
   return (
     <header className="w-full shadow-sm top-0 z-50 bg-white mb-[10vh] transition-all duration-500 ease-in-out">
       <div className="fixed flex w-full items-center justify-between px-4 py-2 shadow-md bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-50 flex-col transition-all duration-500 ease-in-out">
-        {/* Logo and Title */}
         <div className="w-full px-4 flex flex-row items-center justify-between h-16">
-          {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-blue-600 flex flex-row items-center gap-2">
             <img src={logo} alt="" className="w-16"/>
             <span>
-              Spell Chain
               </span>
+              Spell Chain
           </Link>
 
-          {/* Desktop Menu */}
           <nav className="hidden md:flex gap-8">
             {navLinks.map((link) => (
               <Link
@@ -39,7 +36,6 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Mobile Menu Icon */}
           <div className="md:hidden flex flex-col">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -55,7 +51,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Dropdown */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
@@ -78,75 +73,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-// import React, { useState } from "react";
-// import { Link } from "react-router-dom";
-// import { Home, X, Wallet, Menu, Copy} from "lucide-react"; // Icons
-
-// const Navbar: React.FC = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const navLinks = [
-//     { name: "Home", path: "/", icon: <Home size={16} /> },
-//     { name: "Wallet", path: "/wallet", icon: <Wallet size={16} /> },
-//     { name: "Blogs", path: "/blogs", icon: <Copy size={16} /> },
-
-//   ];
-
-//   return (
-//     <header className="w-full shadow-sm top-0 z-50 bg-white mb-[10vh] transition-all duration-500 ease-in-out">
-//       <div className="fixed flex w-full items-center justify-between px-4 py-2 shadow-md bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-50 flex-col transition-all duration-500 ease-in-out">
-//         {/* Logo and Title */}
-//         <div className="w-full px-4 flex flex-row items-center justify-between h-16 ">
-//           {/* Logo */}
-//           <Link to="/" className="text-2xl font-bold text-blue-600">
-//             Web3Wallet
-//           </Link>
-
-//           {/* Desktop Menu */}
-//           <nav className="hidden md:flex  gap-8">
-//             {navLinks.map((link) => (
-//               <Link
-//                 key={link.name}
-//                 to={link.path}
-//                 className="text-gray-100 hover:text-blue-600 transition flex flex-row items-center gap-2"
-//               >
-//                 {link.icon}
-//                 {link.name}
-//               </Link>
-//             ))}
-//           </nav>
-
-//           {/* Mobile Menu Icon */}
-          
-//           <div className="md:hidden flex flex-col ">
-//             {isOpen ? (
-//               <X size={28} onClick={() => setIsOpen(false)} />
-//             ) : (
-//               <Menu size={28} onClick={() => setIsOpen(true)} />
-//             )}
-//           </div>
-//         </div>
-
-//         {/* Mobile Menu Dropdown */}
-//         {isOpen && (
-//           <div className="md:hidden backdrop-blur-lg text-slate-50 w-full px-4 pb-4">
-//             {navLinks.map((link) => (
-//               <Link
-//                 key={link.name}
-//                 to={link.path}
-//                 onClick={() => setIsOpen(false)}
-//                 className="block py-2 text-gray-100 hover:text-blue-600 transition"
-//               >
-//                 {link.name}
-//               </Link>
-//             ))}
-//           </div>
-//         )}
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Navbar;

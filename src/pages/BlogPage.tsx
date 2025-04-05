@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaPen } from "react-icons/fa";
-import { blogs } from "../constants"; // Assuming Blog[] is exported from here
+import { blogs } from "../constants";
 import { motion } from "framer-motion";
 
 type Blog = {

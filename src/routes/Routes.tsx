@@ -1,5 +1,4 @@
 import { RouteObject } from "react-router-dom";
-import useMnemonicCall from "../components/mnemonic";
 import Layout from "../components/Layout";
 import BlogPreview from "../pages/BlogPreview";
 import BlogPage from "../pages/BlogPage";
@@ -9,7 +8,6 @@ import { CryptoLayout } from "../components/CryptoLayout";
 
 
 const Routes = () => {
-  const { mnemonic } = useMnemonicCall();
 
   const routes: RouteObject[] = [
     {

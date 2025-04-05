@@ -5,7 +5,6 @@ const Footer = () => {
     <footer className="bg-gray-900 text-gray-300 bottom-0 w-full py-8">
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">CryptoWallet</h3>
             <p className="text-sm">
@@ -15,9 +14,7 @@ const Footer = () => {
               <a href="#" className="hover:text-white transition-colors">
                 <X size={20} />
               </a>
-              {/* <a href="#" className="hover:text-white transition-colors">
-                <Github size={20} />
-              </a> */}
+            
               <a href="#" className="hover:text-white transition-colors">
                 <Discord size={20} />
               </a>
@@ -27,7 +24,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Products */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Products</h3>
             <ul className="space-y-2">
@@ -52,7 +48,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Support */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Support</h3>
             <ul className="space-y-2">
@@ -80,7 +75,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Legal</h3>
             <ul className="space-y-2">

@@ -46,10 +46,16 @@ export const CryptoLayout = () => {
   }
 
   const selectedCurrencyData = currencies.find((c) => c.id === selectedCurrency)
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  
+  }, [])
+  
+
+
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 flex flex-col">
-      {/* Header */}
       <header
         className={`sticky top-0 z-10 transition-all duration-200 ${
           isScrolled ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md" : "bg-transparent"
@@ -82,7 +88,6 @@ export const CryptoLayout = () => {
         </div>
       </header>
 
-      {/* Mnemonic Section */}
       <div className="container mx-auto px-4 py-6">
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -155,7 +160,6 @@ export const CryptoLayout = () => {
         </div>
       </div>
 
-      {/* Main Content */}
       <main className="flex-1 container mx-auto px-4 pb-8">
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6">
           <div className="flex items-center mb-6">
@@ -174,7 +178,6 @@ export const CryptoLayout = () => {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-4">
         <div className="container mx-auto px-4 text-center text-sm text-gray-500 dark:text-gray-400">
           &copy; {new Date().getFullYear()} Crypto Wallet. All rights reserved.
@@ -185,58 +188,3 @@ export const CryptoLayout = () => {
 }
 
 
-
-// import { useState } from "react";
-// import { EthWallet } from "./eth_wallet";
-// import  SolanaWallet  from "./sol_wallet";
-// import { useMnemonic } from "../contexts/MneumonicContext";
-
-// const currencies = ["ETH", "SOL"];
-
-// export const CryptoLayout = () => {
-//   const [selectedCurrency, setSelectedCurrency] = useState("ETH");
-  
-//   const {mnemonic, regenerateMnemonic }:{mnemonic:string, regenerateMnemonic:()=>void} = useMnemonic(); 
-
-//   const renderWallet = () => {
-//     switch (selectedCurrency) {
-//       case "ETH":
-//         return <EthWallet mnemonic={mnemonic} />;
-//       case "SOL":
-//         return <SolanaWallet />;
-//       default:
-//         return null;
-//     }
-//   };
-
-
-//   return (
-//     <div className="min-h-screen w-full bg-gray-100 flex flex-col">
-//       <div>
-//         <div className="py-4">Generate Mnemonic
-//           <div>{mnemonic}</div>
-//           <button className="bg-blue-600 text-white px-4 py-2 rounded mt-2" onClick={regenerateMnemonic}>Regenerate</button>
-//         </div>
-//       </div>
-//       <header className="bg-white shadow p-4 flex justify-center gap-4">
-//         {currencies.map((currency) => (
-//           <button
-//             key={currency}
-//             onClick={() => setSelectedCurrency(currency)}
-//             className={`px-4 py-2 rounded-xl font-semibold transition ${
-//               selectedCurrency === currency
-//                 ? "bg-blue-600 text-white"
-//                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-//             }`}
-//           >
-//             {currency}
-//           </button>
-//         ))}
-//       </header>
-
-//       <main className="flex-1 p-4 flex justify-center items-start">
-//         {renderWallet()}
-//       </main>
-//     </div>
-//   );
-// };
